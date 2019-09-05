@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>condtional render</title>
+        </head>
+        <body>
+            <div id="app">
+                <div class="product">
+                    <div class="product-image">
+                        <img:src="image">
+                        </div>
+                        <div class="product-info">
+                            <h1>{{ product }}</h1>
+                            <p v-if="inventory>10">in stock</p>
+                            <p v-else-if="inventory<=10 && inventory>0">almost sold out</p>
+                            <p v-else>out of stock</p>
+                            <div v-for="variant in variants":key="variant.variant">
+                                <p>{{ variant in variantColor }}</p>
+                            </div>
+                            <ul>
+                                <li v-for="detail in details">{{ detail }}</li>
+                            </ul>
+                        <button v-on:click="addCart">Add to cart</button>
+                        <div class="cart">
+                            <p>Cart({{cart}})</p>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+            <script src="main.js"></script>
+        </body>
+    
+</html>
+
+
+
